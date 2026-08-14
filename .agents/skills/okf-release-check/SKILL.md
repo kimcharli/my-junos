@@ -1,20 +1,18 @@
 ---
 name: okf-release-check
-description: Guides agents on tracking upstream OKF (Frictionless Data & Google OKF) spec updates and formulating plan-to-plan migration paths.
+description: Guides agents on tracking upstream Google OKF spec updates and formulating plan-to-plan migration paths.
 ---
 
 # OKF Specification Tracking & Migration Planning
 
-Use this skill when checking for changes or updates in upstream **Open Knowledge Format (OKF)** / **Frictionless Data** or **Google Cloud OKF v0.1** specifications, or when structuring a plan-to-plan migration strategy.
+Use this skill when checking for changes or updates in upstream **Google Cloud Open Knowledge Format (OKF)** specifications, or when structuring a plan-to-plan migration strategy.
 
 ---
 
 ## 1. Upstream Spec Analysis
 
 1. **Verify Official Sources:** Query or inspect the official channels:
-   * **Frictionless Data Spec Portal:** [https://specs.frictionlessdata.io/](https://specs.frictionlessdata.io/)
-   * **Specs GitHub Repository:** [https://github.com/frictionlessdata/specs](https://github.com/frictionlessdata/specs)
-   * **Google Cloud Data Blog:** [https://cloud.google.com/blog/products/data-analytics](https://cloud.google.com/blog/products/data-analytics)
+   * **Google Cloud Blog Portal:** [https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing)
 2. **Compare Active Schema:** Examine our local schemas (e.g., `schemas/okf-frontmatter-schema.json`) to map differences in metadata parameters or requirements.
 3. **Assess Impact Level:**
    * **Backward-Compatible (Patch/Minor):** Add optional key validation.

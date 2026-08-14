@@ -2,7 +2,7 @@
 type: meta
 title: JUNOS OKF Knowledge Base Index
 description: Main entry point and directory index for the entire JUNOS Open Knowledge Format repository.
-resource: https://specs.frictionlessdata.io/
+resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 tags: [index, portal]
 timestamp: 2026-08-14T12:00:00Z
 id: KP-META-002

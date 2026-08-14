@@ -1,8 +1,8 @@
 ---
 type: meta
 title: OKF Specification Tracking and Migration Framework
-description: Documents the official Open Knowledge Format (Frictionless Data & Google OKF v0.1) specification, how releases are tracked, and how migration is planned.
-resource: https://specs.frictionlessdata.io/
+description: Documents the official Google Cloud Open Knowledge Format (OKF v0.1) specification, how releases are tracked, and how migration is planned.
+resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 tags: [okf, specifications, standards, migration-planning]
 timestamp: 2026-08-14T12:00:00Z
 id: KP-META-001
@@ -11,15 +11,14 @@ version: 1.0.0
 
 # OKF Specification Tracking & Migration Framework
 
-This document serves as meta-knowledge within the repository to define how the official **Open Knowledge Format (OKF)** / **Frictionless Data** and **Google Cloud OKF v0.1** specifications are adopted, how changes are tracked, and how future migrations are structured.
+This document serves as meta-knowledge within the repository to define how the official **Google Cloud Open Knowledge Format (OKF)** specifications are adopted, how changes are tracked, and how future migrations are structured.
 
 ---
 
-## 1. The OKF Specifications
+## 1. The OKF Specification
 
-Our JUNOS repository aligns with both:
+Our JUNOS repository aligns with:
 * **Google Cloud OKF v0.1 Specification:** Represents knowledge as lightweight markdown files with YAML frontmatter. This matches human-readability and direct agent ingestion.
-* **Frictionless Data Specifications:** Defines how multiple files/assets are grouped and packaged (Data Packages).
 
 ---
 
@@ -29,9 +28,7 @@ To stay aligned with upstream developments, the core engineering team tracks cha
 
 | Resource | Target Content | Frequency |
 |---|---|---|
-| [Google Cloud Blog](https://cloud.google.com/blog/products/data-analytics) | Official announcements regarding Google OKF schema versions. | Semi-annually |
-| [Official Specs Portal](https://specs.frictionlessdata.io/) | Core Frictionless Specs documentation and standards. | Semi-annually |
-| [Specs GitHub Repository](https://github.com/frictionlessdata/specs) | Active proposals (RFPs), issues, and release logs. | Quarterly |
+| [Google Cloud Blog Portal](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) | Official announcements regarding Google OKF schema versions. | Semi-annually |
 
 ### Versioning Classification
 Upstream specification changes are classified by their impact:
