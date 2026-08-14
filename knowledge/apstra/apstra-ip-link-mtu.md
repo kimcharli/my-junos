@@ -1,7 +1,7 @@
 ---
 type: JUNOS Base Config
 title: Apstra Fabric IP Links MTU Configuration
-description: Recommends configuring the Default IP Links MTU to Generic Systems as 9170 to match the internal Fabric MTU, instead of leaving it empty (which defaults to 1500).
+description: Recommends configuring the MTU for IP links to Generic Systems under Fabric Settings/Fabric Policy as 9170 to match the internal Fabric MTU, instead of leaving it empty (which defaults to 1500).
 resource: https://www.juniper.net/documentation/us/en/software/apstra4.1/apstra-user-guide/topics/topic-map/evpn-vxlan-dci.html
 tags: [apstra, fabric-settings, mtu, jumbo-frames, interfaces]
 generated:
@@ -29,7 +29,7 @@ set interfaces et-0/0/1 mtu 9170
 # Apstra Design & Architectural Rationale
 
 ### 1. Default Behavior vs. Recommended Practice
-In Apstra fabric blueprints, when creating or configuring IP links under **Default IP Links to Generic Systems**, the MTU field is **empty** by default. 
+In Apstra fabric blueprints, under **Fabric Settings / Fabric Policy**, the MTU field for IP links to Generic Systems is **empty** by default. 
 * **The Default Empty Behavior:** Leaves the interface MTU unset in the blueprint, which defaults to standard Ethernet MTU (**`1500` bytes**) in the generated device configuration.
 * **The Recommended Practice:** Manually override the empty field and configure the Generic System MTU to **`9170` bytes**.
 
