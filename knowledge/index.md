@@ -22,6 +22,7 @@ Welcome to the JUNOS Open Knowledge Format (OKF) repository. This bundle houses 
 
 ## Directory Navigation
 
+* **[Apstra Fabric Configurations](apstra/index.md):** Standardized blueprint configurations and design rules managed by Juniper Apstra.
 * **[Base Configurations](base-configs/index.md):** Golden templates and boilerplate configurations for foundational services.
 * **[Audit & Hardening Items](audit-items/index.md):** Dynamic rules and scripts to verify control plane compliance and device security.
 * **[Meta Specifications](meta-docs/index.md):** Internal standards, specification tracking, and migration plans.

@@ -20,6 +20,5 @@ These files contain golden-standard baseline templates. They are ready to be par
 
 ## Available Configuration Blueprints
 
-* **[Apstra EVPN ESI MAC MSB Configuration](apstra-esi-mac.md):** ESI MAC MSB even value configuration best-practice under Apstra blueprints.
 * **[System DNS Servers configuration](sys-dns.md):** Domain name resolution setups.
 * **[System NTP Synchronization configuration](sys-ntp.md):** Reliable system clock synchronization settings.
