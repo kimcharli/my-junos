@@ -1,5 +1,5 @@
 ---
-type: JUNOS Base Config
+type: Apstra Configuration
 title: Apstra Fabric IP Links MTU Configuration
 description: Recommends configuring the MTU for IP links to Generic Systems under Fabric Settings/Fabric Policy as 9170 to match the internal Fabric MTU, instead of leaving it empty (which defaults to 1500).
 resource: https://www.juniper.net/documentation/us/en/software/apstra4.1/apstra-user-guide/topics/topic-map/evpn-vxlan-dci.html
@@ -14,26 +14,35 @@ id: KP-INT-002
 version: 1.0.0
 ---
 
-# JUNOS Configuration Snippet
+# Apstra REST API Intent Payload
 
-In Apstra-orchestrated fabrics, the interface MTU of physical IP links connecting leaves, spines, or external generic systems (such as firewalls, routers, or hypervisors) is configured at the physical layer. To enable high-performance jumbo frame traversal without fragmentation, apply the `9170` MTU value:
+To configure the MTU for links to Generic Systems (external routers, firewalls, or hypervisors) in an Apstra fabric, the change must be orchestrated directly on the **Apstra Controller** (not on the device CLI) to preserve the single source of truth.
 
-```set
-set interfaces et-0/0/1 mtu 9170
+### HTTP Method & Endpoint
+* **Method:** `PATCH`
+* **Path:** `/api/blueprints/<blueprint_id>/fabric-settings`
+
+### JSON Payload
+```json
+{
+  "external_router_mtu": 9170
+}
 ```
-
-*(Where `et-0/0/1` represents the high-speed interface connecting to the generic system).*
 
 ---
 
-# Apstra Design & Architectural Rationale
+# Alternative GUI Configuration Path
 
-### 1. Default Behavior vs. Recommended Practice
-In Apstra fabric blueprints, under **Fabric Settings / Fabric Policy**, the MTU field for IP links to Generic Systems is **empty** by default. 
-* **The Default Empty Behavior:** Leaves the interface MTU unset in the blueprint, which defaults to standard Ethernet MTU (**`1500` bytes**) in the generated device configuration.
-* **The Recommended Practice:** Manually override the empty field and configure the Generic System MTU to **`9170` bytes**.
+1. Log in to the **Apstra GUI**.
+2. Navigate to your active **Blueprint** and click the **Staged** tab.
+3. Click on **Settings** and scroll to **Fabric Settings / Fabric Policy**.
+4. Edit the policy and set **MTU for IP links to Generic Systems** (often labeled or mapped as *External Router MTU*) to `9170`.
+5. Commit the blueprint changes to push the intent down to the fabric.
 
-### 2. Impact of MTU Mismatches in EVPN-VXLAN
-EVPN-VXLAN encapsulation adds a **50-byte** overhead to standard IP packets (including the outer Ethernet, IP, UDP, and VXLAN headers). 
-* **Packet Fragmentation:** If generic interfaces remain at `1500` bytes while the core fabric transports VXLAN packets, high-throughput packets will be forced to undergo CPU-intensive IP fragmentation at leaf boundaries or be dropped entirely.
-* **End-to-End Performance:** Matching the Generic System IP Link MTU to the core Fabric MTU of **`9170`** ensures seamless end-to-end traversal of jumbo frames (up to 9000 bytes payload) without fragmentation, maximizing packet forwarding engine (PFE) throughput.
+---
+
+# ⚠️ WARNING: DO NOT CONFIGURE VIA JUNOS CLI
+
+In an intent-based networking (IBN) platform like Apstra, **direct out-of-band device-level CLI edits are strictly forbidden**:
+* **Configuration Deviation Anomaly:** If you run `set interfaces <interface> mtu 9170` directly on the switch console, Apstra's continuous validation loop will immediately detect a **Configuration Deviation anomaly**.
+* **Automatic Overwrite:** Apstra acts as the authoritative config source and will flag the CLI edit as an unauthorized drift, notifying operators or automatically overwriting the manual CLI changes to restore the switch to its approved staged intent.

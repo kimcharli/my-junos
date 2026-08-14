@@ -321,6 +321,15 @@ def main():
                     else:
                         print("  [+] Compliance audit validation metrics found in frontmatter.")
                         
+                elif doc_type == "Apstra Configuration":
+                    # Check that the markdown body contains a valid json API payload codeblock
+                    if not re.search(r'```json\s*\n.*?\n```', body, re.DOTALL):
+                        print("  [-] Error: Apstra configuration missing a valid '```json ... ```' API payload codeblock in the body.")
+                        total_errors += 1
+                        validation_passed = False
+                    else:
+                        print("  [+] Apstra API configuration JSON payload codeblock found.")
+                        
                 elif doc_type == "meta":
                     print("  [+] Meta-knowledge tracking document validated successfully.")
                     

@@ -3,7 +3,7 @@
   "title": "GoogleOKFv02Frontmatter",
   "type": "object",
   "properties": {
-    "type": { "type": "string", "enum": ["JUNOS Base Config", "JUNOS Audit", "meta"] },
+    "type": { "type": "string", "enum": ["JUNOS Base Config", "JUNOS Audit", "meta", "Apstra Configuration"] },
     "title": { "type": "string" },
     "description": { "type": "string" },
     "resource": { "type": "string" },
