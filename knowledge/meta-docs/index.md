@@ -1,0 +1,18 @@
+---
+type: meta
+title: OKF Meta Specifications Index
+description: Repository standards, specification tracking documents, and migration guidelines.
+resource: https://specs.frictionlessdata.io/
+tags: [index, meta-docs]
+timestamp: 2026-08-14T12:00:00Z
+id: KP-META-005
+version: 1.0.0
+---
+
+# OKF Meta Specifications
+
+This folder contains repository-wide standards documents, release notes, and strategy manuals governing our Open Knowledge Format design.
+
+## Specifications & Standards
+
+* **[OKF Specification Tracking and Migration Framework](okf-spec-tracking.md):** Guides how upstream releases are monitored and how migrations are executed.

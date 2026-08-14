@@ -1,0 +1,21 @@
+#!/bin/sh
+# Git pre-commit hook to validate OKF files
+echo "============================================================"
+echo "Running Pre-Commit OKF Validation..."
+echo "============================================================"
+
+python3 tools/validate_okf.py
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+    echo "============================================================"
+    echo "[-] ERROR: OKF validation failed. Commit aborted."
+    echo "[-] Please fix the errors above or use 'git commit --no-verify' to override."
+    echo "============================================================"
+    exit 1
+fi
+
+echo "============================================================"
+echo "[+] OKF validation passed! Proceeding with commit..."
+echo "============================================================"
+exit 0
