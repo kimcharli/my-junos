@@ -5,7 +5,10 @@ description: Table of contents and entry point for security and compliance audit
 resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 tags: [index, audit-items]
 generated:
-  by: human:NetOps Core Team
+  by: zed-agent/gemini-3.5-flash
+  at: 2026-08-14T12:00:00Z
+verified:
+  by: human:ckim
   at: 2026-08-14T12:00:00Z
 id: KP-META-004
 version: 1.0.0

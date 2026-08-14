@@ -5,7 +5,10 @@ description: Plaintext Telnet management protocol must be completely disabled to
 resource: https://www.juniper.net/documentation/us/en/software/junos/user-access/topics/topic-map/telnet-connection-disabling.html
 tags: [telnet, cleartext, security-hardening]
 generated:
-  by: human:NetOps Core Team
+  by: zed-agent/gemini-3.5-flash
+  at: 2026-08-14T12:00:00Z
+verified:
+  by: human:ckim
   at: 2026-08-14T12:00:00Z
 id: KP-SEC-002
 version: 1.0.0

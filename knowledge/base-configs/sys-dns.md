@@ -5,7 +5,10 @@ description: Configures standard domain name resolution servers for name lookups
 resource: https://www.juniper.net/documentation/us/en/software/junos/user-access/topics/topic-map/dns-service-configuring.html
 tags: [dns, name-resolution, system-services]
 generated:
-  by: human:NetOps Core Team
+  by: zed-agent/gemini-3.5-flash
+  at: 2026-08-14T12:00:00Z
+verified:
+  by: human:ckim
   at: 2026-08-14T12:00:00Z
 id: KP-SYS-001
 version: 1.0.0
