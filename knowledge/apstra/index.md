@@ -21,3 +21,4 @@ This section houses standardized blueprint configurations and architectural desi
 ## Active Blueprint Designs
 
 * **[Apstra EVPN ESI MAC MSB Configuration](apstra-esi-mac.md):** ESI MAC MSB even value configuration best-practice under Apstra blueprints.
+* **[Apstra Fabric IP Links MTU Configuration](apstra-ip-link-mtu.md):** Recommends configuring the Default IP Links MTU to Generic Systems as 9170 to match the Fabric MTU, instead of leaving it empty (defaults to 1500).
