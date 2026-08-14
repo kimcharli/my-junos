@@ -4,7 +4,9 @@ title: OKF Meta Specifications Index
 description: Repository standards, specification tracking documents, and migration guidelines.
 resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 tags: [index, meta-docs]
-timestamp: 2026-08-14T12:00:00Z
+generated:
+  by: human:NetOps Core Team
+  at: 2026-08-14T12:00:00Z
 id: KP-META-005
 version: 1.0.0
 ---

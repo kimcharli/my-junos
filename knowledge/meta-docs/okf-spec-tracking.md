@@ -1,10 +1,12 @@
 ---
 type: meta
 title: OKF Specification Tracking and Migration Framework
-description: Documents the official Google Cloud Open Knowledge Format (OKF v0.1) specification, how releases are tracked, and how migration is planned.
+description: Documents the official Google Cloud Open Knowledge Format (OKF v0.2) specification, how releases are tracked, and how migration is planned.
 resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 tags: [okf, specifications, standards, migration-planning]
-timestamp: 2026-08-14T12:00:00Z
+generated:
+  by: human:NetOps Core Team
+  at: 2026-08-14T12:00:00Z
 id: KP-META-001
 version: 1.0.0
 ---
@@ -18,7 +20,7 @@ This document serves as meta-knowledge within the repository to define how the o
 ## 1. The OKF Specification
 
 Our JUNOS repository aligns with:
-* **Google Cloud OKF v0.1 Specification:** Represents knowledge as lightweight markdown files with YAML frontmatter. This matches human-readability and direct agent ingestion.
+* **Google Cloud OKF v0.2 Specification:** Represents knowledge as lightweight markdown files with YAML frontmatter. This matches human-readability and direct agent ingestion.
 
 ---
 

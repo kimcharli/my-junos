@@ -4,7 +4,9 @@ title: JUNOS Compliance Audit Items Index
 description: Table of contents and entry point for security and compliance audits.
 resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 tags: [index, audit-items]
-timestamp: 2026-08-14T12:00:00Z
+generated:
+  by: human:NetOps Core Team
+  at: 2026-08-14T12:00:00Z
 id: KP-META-004
 version: 1.0.0
 ---

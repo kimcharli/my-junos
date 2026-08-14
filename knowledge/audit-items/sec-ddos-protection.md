@@ -4,7 +4,9 @@ title: Ensure No DDoS Protection Packet Drops
 description: Verifies that the router or switch ddos-protection protocols statistics are clean and no control plane packets are being dropped.
 resource: https://www.juniper.net/documentation/us/en/software/junos/security-mgmt/topics/topic-map/ddos-protection-overview.html
 tags: [ddos, control-plane, security-hardening]
-timestamp: 2026-08-14T12:00:00Z
+generated:
+  by: human:NetOps Core Team
+  at: 2026-08-14T12:00:00Z
 id: KP-SEC-003
 version: 1.0.0
 verification_method: cli-regex

@@ -226,7 +226,7 @@ def extract_frontmatter(filepath):
 
 def main():
     print("=" * 60)
-    print("Google OKF v0.1 JUNOS Knowledge Validator")
+    print("Google OKF v0.2 JUNOS Knowledge Validator")
     print("=" * 60)
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -290,7 +290,7 @@ def main():
                     validation_passed = False
                     continue
                 
-                print("  [+] YAML Frontmatter complies with OKF v0.1 schema.")
+                print("  [+] YAML Frontmatter complies with OKF v0.2 schema.")
                 
                 doc_type = data.get("type")
                 

@@ -4,7 +4,9 @@ title: Ensure Telnet Management is Disabled
 description: Plaintext Telnet management protocol must be completely disabled to avoid credential leakage.
 resource: https://www.juniper.net/documentation/us/en/software/junos/user-access/topics/topic-map/telnet-connection-disabling.html
 tags: [telnet, cleartext, security-hardening]
-timestamp: 2026-08-14T12:00:00Z
+generated:
+  by: human:NetOps Core Team
+  at: 2026-08-14T12:00:00Z
 id: KP-SEC-002
 version: 1.0.0
 verification_method: cli-regex
