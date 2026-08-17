@@ -6,17 +6,21 @@ resource: https://cloud.google.com/blog/products/data-analytics/how-the-open-kno
 tags: [index, apstra]
 generated:
   by: zed-agent/gemini-3.5-flash
-  at: 2026-08-14T12:00:00Z
+  at: 2026-08-17T18:39:21Z
 verified:
   by: human:ckim
-  at: 2026-08-14T12:00:00Z
+  at: 2026-08-17T18:39:21Z
 id: KP-META-006
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Apstra Fabric Configurations
 
 This section houses standardized blueprint configurations and architectural design rules for network fabrics orchestrated by **Juniper Apstra**.
+
+## API & Authentication Baselines
+
+* **[Apstra Controller REST API Authentication](apstra-auth.md):** Describes standard procedures for authenticating to the Apstra REST API to fetch and apply config intents.
 
 ## Active Blueprint Designs
 
