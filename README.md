@@ -37,7 +37,8 @@ my-junos/
 ├── specs/                             # Plan files and the NEXT.md session pointer
 ├── tools/
 │   ├── validate_okf.py                # Offline zero-dependency CLI validator
-│   ├── okf_manifest.py                # Regenerates MANIFEST.md
+│   ├── okf_new.py                    # Scaffolds a new document with next free ID
+│   ├── okf_manifest.py               # Regenerates MANIFEST.md
 │   ├── pre-commit                     # Hook: refresh manifest, then validate
 │   └── setup_hooks.sh                 # Installs the hook into .git/hooks
 └── README.md                          # Repository overview and integration docs
@@ -79,18 +80,26 @@ set system name-server 1.1.1.1
 
 ## Adding Incremental Items
 
-Adding new JUNOS knowledge items is simple:
+Scaffold the document rather than hand-writing frontmatter — the generator claims the next free
+ID from [`MANIFEST.md`](MANIFEST.md) and emits a skeleton that already passes validation:
 
-### 1. Adding a Base Configuration
-Create a new Markdown file in `knowledge/base-configs/` (e.g., `syslog-config.md`). Include the mandatory frontmatter fields with `type: JUNOS Base Config` and write your configuration commands within a ` ```set ... ``` ` block.
+```bash
+python tools/okf_new.py base-config sys-syslog --title "System Syslog Configuration"
+python tools/okf_new.py audit sec-snmp-hardened --title "SNMPv2 Disabled"
+python tools/okf_new.py apstra apstra-dhcp-relay-giaddr --title "Apstra DHCP Relay GIADDR"
+python tools/okf_new.py meta okf-spec-tracking --title "OKF Spec Tracking"
+```
 
-### 2. Adding an Audit Check
-Create a new Markdown file in `knowledge/audit-items/` (e.g., `snmp-hardened.md`). Set `type: JUNOS Audit`, and declare `verification_method` (either `cli-regex` or `xml-xpath`) along with your array of `checks` in the frontmatter.
+Then replace every `TODO`, link the document from its section `index.md`, and validate.
 
-### 3. Adding Apstra Fabric Intent
-Create a new Markdown file in `knowledge/apstra/` (e.g., `apstra-dhcp-relay-giaddr.md`). Set `type: Apstra Configuration` and include the REST endpoint plus a ` ```json ... ``` ` intent payload block in the body.
+### 1. Base Configuration
+Lands in `knowledge/base-configs/` with `type: JUNOS Base Config`; write your commands inside the ` ```set ... ``` ` block.
 
-In all cases, claim the document `id` from the **Next Free IDs** table in [`MANIFEST.md`](MANIFEST.md).
+### 2. Audit Check
+Lands in `knowledge/audit-items/` with `type: JUNOS Audit`; fill in `verification_method` (`cli-regex` or `xml-xpath`) and the `checks` array.
+
+### 3. Apstra Fabric Intent
+Lands in `knowledge/apstra/` with `type: Apstra Configuration`; supply the REST endpoint and the ` ```json ... ``` ` intent payload.
 
 ---
 

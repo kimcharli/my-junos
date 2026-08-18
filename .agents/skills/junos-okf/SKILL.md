@@ -21,6 +21,17 @@ Every knowledge concept is stored as a **single Markdown (.md) file** in the `kn
 
 Claim the document `id` from the **Next Free IDs** table in `MANIFEST.md`.
 
+**Scaffold rather than hand-writing frontmatter:**
+
+```bash
+python tools/okf_new.py {base-config|audit|apstra|meta} <slug> --title "..."
+```
+
+It claims the next free ID, stamps every required field, and emits the per-type body stub the
+validator demands. Use `--prefix KP-RT|KP-PRO` when the domain differs from the type default.
+The templates below document what the scaffolder produces, for when you need to read or repair
+a document by hand.
+
 ---
 
 ## 2. Formatting Specifications

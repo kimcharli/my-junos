@@ -21,6 +21,21 @@ Use this skill when you receive new, raw, or unstructured configuration items, c
 
 ---
 
+## 1b. Scaffold Before Writing
+
+Do not hand-write frontmatter. Generate the skeleton, then fill in the body:
+
+```bash
+python tools/okf_new.py base-config <slug> --title "..."   # KP-SYS (use --prefix KP-RT etc.)
+python tools/okf_new.py audit <slug> --title "..."         # KP-SEC
+python tools/okf_new.py apstra <slug> --title "..."        # KP-INT
+python tools/okf_new.py meta <slug> --title "..."          # KP-META
+```
+
+The scaffolder allocates the ID, stamps every required field, and includes the body codeblock the validator requires. The specifications below describe what it emits, for reading or repairing documents by hand.
+
+---
+
 ## 2. Document Construction
 
 Generate a single Markdown file in Google OKF v0.2 format. Required frontmatter on every type: `type`, `title`, `description`, `resource`, `tags`, `generated`, `id`, `version`. `generated` is an object with `by` and `at`. **`timestamp` is not a schema property — emitting it will not satisfy the required `generated` field.**
