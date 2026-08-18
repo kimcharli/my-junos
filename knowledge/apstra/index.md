@@ -11,7 +11,7 @@ verified:
   by: human:ckim
   at: 2026-08-17T18:39:21Z
 id: KP-META-006
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Apstra Fabric Configurations
@@ -26,3 +26,7 @@ This section houses standardized blueprint configurations and architectural desi
 
 * **[Apstra EVPN ESI MAC MSB Configuration](apstra-esi-mac.md):** ESI MAC MSB even value configuration best-practice under Apstra blueprints.
 * **[Apstra Fabric IP Links MTU Configuration](apstra-ip-link-mtu.md):** Recommends configuring the Default IP Links MTU to Generic Systems as 9170 to match the Fabric MTU, instead of leaving it empty (defaults to 1500).
+
+## Interop & Field Notes
+
+* **[Apstra DHCP Relay GIADDR and Windows DHCP Server Interop](apstra-dhcp-relay-giaddr.md):** Apstra relays DHCP from the VRF `lo0` address; Windows DHCP Server drops relays whose GIADDR is outside every active scope, requiring a fully-excluded authorization scope.
