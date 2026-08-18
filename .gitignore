@@ -1,0 +1,6 @@
+# Python bytecode (tools/okf_manifest.py imports tools/validate_okf.py)
+__pycache__/
+*.pyc
+
+# Local tooling output
+graphify-out/
