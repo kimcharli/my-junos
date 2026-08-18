@@ -1,5 +1,23 @@
 #!/bin/sh
-# Git pre-commit hook to validate OKF files
+# Git pre-commit hook to refresh the manifest and validate OKF files
+echo "============================================================"
+echo "Refreshing OKF Knowledge Manifest..."
+echo "============================================================"
+
+python3 tools/okf_manifest.py
+MANIFEST_RESULT=$?
+
+if [ $MANIFEST_RESULT -ne 0 ]; then
+    echo "============================================================"
+    echo "[-] ERROR: Manifest generation reported problems. Commit aborted."
+    echo "[-] Resolve duplicate IDs or malformed frontmatter above."
+    echo "============================================================"
+    exit 1
+fi
+
+# Stage the regenerated manifest so it never lands stale in history.
+git add MANIFEST.md
+
 echo "============================================================"
 echo "Running Pre-Commit OKF Validation..."
 echo "============================================================"
